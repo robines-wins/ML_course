@@ -6,10 +6,8 @@ import numpy as np
 
 def build_poly(x, degree):
     """polynomial basis functions for input data x, for j=0 up to j=degree."""
-    # ***************************************************
-    # INSERT YOUR CODE HERE
-    # polynomial basis function: TODO
-    # this function should return the matrix formed
-    # by applying the polynomial basis to the input data
-    # ***************************************************
-    raise NotImplementedError
+    m =np.ones((x.shape[0],degree+1))
+    for i in range(x.shape[0]):
+        for j in range(1,degree+1):
+            m[i][j] = x[i]**j#x[i]*m[i][j-1] #
+    return m
